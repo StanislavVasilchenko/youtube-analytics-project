@@ -23,3 +23,6 @@ class Channel:
         channel = self.youtube.channels().list(id=self.channel_id, part='snippet,statistics').execute()
         print(json.dumps(channel, indent=2, ensure_ascii=False))
 
+    @classmethod
+    def get_service(cls):
+        return cls.youtube
