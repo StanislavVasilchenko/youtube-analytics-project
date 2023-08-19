@@ -34,9 +34,9 @@ class Channel:
         """
         Сохраняет в файл значения атрибутов экземпляра `Channel`
         """
-        data = {"channel_id": str(self.channel_id),
+        data = {"channel_id": self.channel_id,
                 "title": self.title,
-                "description": str(self.description),
+                "description": self.description,
                 "video_count": self.video_count,
                 "subscribers": self.subscribers,
                 "url": self.url
