@@ -43,4 +43,14 @@ class Channel:
 
                 }
         with open(file_name, "w", encoding="utf-8") as file:
-            json.dump(data, file, ensure_ascii=False)
+            json.dump(data, file, ensure_ascii=False, indent=2)
+
+    @property
+    def channel_id(self):
+        return self.__channel_id
+
+    @channel_id.setter
+    def channel_id(self, channel_id):
+        if channel_id != self.__channel_id:
+            print("Нельзя изменить атрибут")
+
