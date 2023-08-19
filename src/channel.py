@@ -53,4 +53,3 @@ class Channel:
     def channel_id(self, channel_id):
         if channel_id != self.__channel_id:
             print("Нельзя изменить атрибут")
-
