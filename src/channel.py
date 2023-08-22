@@ -63,3 +63,14 @@ class Channel:
     def __sub__(self, other):
         return int(self.video_count) - int(other.video_count)
 
+    def __gt__(self, other):
+        return int(self.video_count) > int(other.video_count)
+
+    def __ge__(self, other):
+        return int(self.video_count) >= int(other.video_count)
+
+    def __lt__(self, other):
+        return int(self.video_count) < int(other.video_count)
+
+    def __le__(self, other):
+        return int(self.video_count) <= int(other.video_count)
