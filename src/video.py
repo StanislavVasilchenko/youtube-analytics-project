@@ -20,13 +20,16 @@ class Video:
     def print_info(self) -> None:
         """Выводит в консоль информацию о видео."""
         video = self.youtube.videos().list(part='snippet,statistics,contentDetails,topicDetails',
-                                             id=self.video_id
-                                             ).execute()
+                                           id=self.video_id
+                                           ).execute()
         print(json.dumps(video, indent=2, ensure_ascii=False))
 
     def __str__(self):
         return f"{self.title}"
 
 
-video1 = Video('AWX4JnAnjBE')
-video1.print_info()
+class PLVideo(Video):
+    def __init__(self, video_id, play_list_id):
+        super().__init__(video_id)
+        self.play_list_id = play_list_id
+        self.url = f"https://www.youtube.com/playlist?list{self.play_list_id}"
