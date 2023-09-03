@@ -15,7 +15,7 @@ class Video:
         self.title = self.video_response["items"][0]["snippet"]["title"]
         self.url = f"https://www.youtube.com/watch?v={self.video_id}"
         self.viewCount = self.video_response["items"][0]["statistics"]["viewCount"]
-        self.viewCount = self.video_response["items"][0]["statistics"]["likeCount"]
+        self.likeCount = self.video_response["items"][0]["statistics"]["likeCount"]
 
     def print_info(self) -> None:
         """Выводит в консоль информацию о видео."""
