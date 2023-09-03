@@ -13,7 +13,7 @@ class Video:
                                                          id=video_id
                                                          ).execute()
         self.title = self.video_response["items"][0]["snippet"]["title"]
-        self.url = f"https://www.youtube.com/watch?v={self.video_id}"
+        self.url = f"https://youtu.be/{self.video_id}"
         self.viewCount = self.video_response["items"][0]["statistics"]["viewCount"]
         self.likeCount = self.video_response["items"][0]["statistics"]["likeCount"]
 
@@ -32,4 +32,4 @@ class PLVideo(Video):
     def __init__(self, video_id, play_list_id):
         super().__init__(video_id)
         self.play_list_id = play_list_id
-        self.url = f"https://www.youtube.com/playlist?list{self.play_list_id}"
+        self.url = f"https://www.youtube.com/playlist?list={self.play_list_id}"
