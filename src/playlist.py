@@ -32,7 +32,6 @@ class PlayList(PLVideo):
         video_response = self.video_response
         all_time = datetime.timedelta()
         for video in video_response['items']:
-            print(all_time)
             # YouTube video duration is in ISO 8601 format
             iso_8601_duration = video['contentDetails']['duration']
             duration = isodate.parse_duration(iso_8601_duration)
