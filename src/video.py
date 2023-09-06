@@ -17,7 +17,7 @@ class Video:
             self.url = f"https://youtu.be/{self.video_id}"
             self.viewCount = self.video_response["items"][0]["statistics"]["viewCount"]
             self.like_count = self.video_response["items"][0]["statistics"]["likeCount"]
-        except:
+        except IndexError:
             self.video_response = None
             self.title = None
             self.url = None
